@@ -7,15 +7,19 @@
   width: 100%;
 
 }
+
+.navbar-background {
+  background-color: white;
+}
+
 #navbar.collapse.navbar-collapse.pull-right {
-  color: black;
+  color: white;
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
         font-weight: bold;
         text-decoration: none;
         color: #4ca950;
-        background-color: transparent !important;
   }
 
 .icon-bar {
@@ -26,11 +30,25 @@
 }
 
 .navbar-styling {
-  padding-top: 20px
+  padding-top: 10px
 
 }
 
 .newlist {
   padding: 20px;
   background-color: lightgrey;
+}
+
+.homeprofile {
+  padding: 15px;
+}
+
+// .eachhouse {
+//   background-color: grey;
+// }
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
 }

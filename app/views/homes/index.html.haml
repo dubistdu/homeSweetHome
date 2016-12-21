@@ -1,52 +1,51 @@
 
-#coverimage
-  .container
+#coverimage.img-responsive
 
 .container
   .page-header
     %h1 Listing homes
+.container
+  .row.center
+    - @homes.each do |home|
+      .col-md-6.col-xs-12
+        .eachhouse
+          - if home.images
+            .img-responsive.center-block
+              = image_tag attachment_url(home, :images), size: "500x340"
+        .container-fluid
+          .row
+            .col-md-6.col-xs-12.homeprofile
+              %h2
+                = " $"
+                = home.price
+              %p
+                = home.address
+              %p= home.description
+              %p
+                = home.number_of_bedrooms
+                = "beds / "
+                = home.number_of_bathrooms
+                = " bths / "
+                = home.square_foot
+                = " sqf "
+                - if home.swimming_pool? == true
+                  = " / Swimming pool: Yes"
+                - else
+                  = ""
+              %p
+                - if home.parking_garage? == true
+                  = "Garage: "
+                  = home.parking_garage_type
+                  = " / "
+                  = home.parking_garage_size
+                  = "sqf"
 
-  .table-responsive
-    %table.table.table-striped.table-bordered.table-hover
-      %thead
-        %tr
-          %th Address
-          %th Description
-          %th Number of bedrooms
-          %th Number of bathrooms
-          %th Square foot
-          %th Price
-          %th Swimming pool
-          %th Parking garage
-          %th Parking garage type
-          %th Parking garage size
-          %th Images
-          %th Agent
-          %th{colspan: 3}
-
-      %tbody
-        - @homes.each do |home|
-          %tr
-            %td= home.address
-            %td= home.description
-            %td= home.number_of_bedrooms
-            %td= home.number_of_bathrooms
-            %td= home.square_foot
-            %td= home.price
-            %td= home.swimming_pool
-            %td= home.parking_garage
-            %td= home.parking_garage_type
-            %td= home.parking_garage_size
-            %td
-              - if home.images
-                = image_tag attachment_url(home, :images), size: "200x200"
-            %td= home.agent_id
-            %td
-              = link_to home do
-                %span.glyphicon.glyphicon-ok
-            %td
-              = link_to edit_home_path(home) do
-                %span.glyphicon.glyphicon-pencil
-            %td
-              = link_to home, data: { confirm: 'Are you sure?' }, method: :delete do
-                %span.glyphicon.glyphicon-remove
+              -# %td
+              -#   = link_to home do
+              -#     %span.glyphicon.glyphicon-ok
+              -# %td
+              -#   = link_to edit_home_path(home) do
+              -#     %span.glyphicon.glyphicon-pencil
+              -# %td
+              -#   = link_to home, data: { confirm: 'Are you sure?' }, method: :delete do
+              -#     %span.glyphicon.glyphicon-remove
