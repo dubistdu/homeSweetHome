@@ -1,0 +1,37 @@
+.container
+  .page-header
+    = link_to homes_path, class: 'btn btn-default' do
+      %span.glyphicon.glyphicon-list-alt
+      Back
+    = link_to edit_home_path(@home), class: 'btn btn-primary' do
+      %span.glyphicon.glyphicon-pencil
+      Edit
+    %h1 Show home
+
+  %dl.dl-horizontal
+    %dt Address:
+    %dd= @home.address
+    %dt Description:
+    %dd= @home.description
+    %dt Number of bedrooms:
+    %dd= @home.number_of_bedrooms
+    %dt Number of bathrooms:
+    %dd= @home.number_of_bathrooms
+    %dt Square foot:
+    %dd= @home.square_foot
+    %dt Price:
+    %dd= @home.price
+    %dt Swimming pool:
+    %dd= @home.swimming_pool
+    %dt Parking garage:
+    %dd= @home.parking_garage
+    %dt Parking garage type:
+    %dd= @home.parking_garage_type
+    %dt Parking garage size:
+    %dd= @home.parking_garage_size
+    %dt Image:
+    %dd= @home.image
+    %dt Images:
+    %dd= @home.images_id
+    %dt Agent:
+    %dd= @home.agent_id

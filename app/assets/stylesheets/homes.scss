@@ -1,0 +1,36 @@
+#coverimage {
+  height: auto;
+  min-height:400px;
+  background: url(headerimg2.png);
+  margin:0;
+  background-size:cover;
+  width: 100%;
+
+}
+#navbar.collapse.navbar-collapse.pull-right {
+  color: black;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+        font-weight: bold;
+        text-decoration: none;
+        color: #4ca950;
+        background-color: transparent !important;
+  }
+
+.icon-bar {
+  padding-top: 3px;
+  color: #A9A9A9;
+  border-color: #A9A9A9;
+  background-color: #A9A9A9;
+}
+
+.navbar-styling {
+  padding-top: 20px
+
+}
+
+.newlist {
+  padding: 20px;
+  background-color: lightgrey;
+}
