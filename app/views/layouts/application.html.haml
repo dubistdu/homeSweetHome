@@ -25,12 +25,12 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to root_path class: "navbar-brand, homelogo" do
-            = image_tag("logo.png", size: "70x70")
+        = link_to root_path class: "navbar-brand, homelogo" do
+          = image_tag("logo.png", size: "330x60")
         #navbar.collapse.navbar-collapse.pull-right
           %ul.nav.navbar-nav.navbar-styling
             %li.active
-              = link_to "BUY", "#"
+              = link_to "BUY", homes_path
             %li
               = link_to "SELL", new_home_path
             %li

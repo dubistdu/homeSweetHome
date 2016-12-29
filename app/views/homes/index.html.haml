@@ -1,51 +1,48 @@
-
 #coverimage.img-responsive
 
 .container
-  .page-header
-    %h1 Listing homes
+  .page-header.text-center.index-header
+    %h2 Homes for sale
 .container
   .row.center
     - @homes.each do |home|
-      .col-md-6.col-xs-12
-        .eachhouse
-          - if home.images
-            .img-responsive.center-block
-              = image_tag attachment_url(home, :images), size: "500x340"
-        .container-fluid
-          .row
-            .col-md-6.col-xs-12.homeprofile
-              %h2
-                = " $"
-                = home.price
-              %p
-                = home.address
-              %p= home.description
-              %p
-                = home.number_of_bedrooms
-                = "beds / "
-                = home.number_of_bathrooms
-                = " bths / "
-                = home.square_foot
-                = " sqf "
-                - if home.swimming_pool? == true
-                  = " / Swimming pool: Yes"
-                - else
-                  = ""
-              %p
-                - if home.parking_garage? == true
-                  = "Garage: "
-                  = home.parking_garage_type
-                  = " / "
-                  = home.parking_garage_size
-                  = "sqf"
-
-              -# %td
-              -#   = link_to home do
-              -#     %span.glyphicon.glyphicon-ok
-              -# %td
-              -#   = link_to edit_home_path(home) do
-              -#     %span.glyphicon.glyphicon-pencil
-              -# %td
-              -#   = link_to home, data: { confirm: 'Are you sure?' }, method: :delete do
-              -#     %span.glyphicon.glyphicon-remove
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12
+        = link_to home do
+          .homeframe
+            - if home.images
+              .image-container.img
+                = image_tag attachment_url(home, :images), size: "500x345", class: "home_image_thumb"
+                -# it's not @home because we are iterating thru |home|
+              .homeprofile
+                %h2
+                  = " $"
+                  = home.price
+                %p
+                  = home.address
+                %p
+                  = home.number_of_bedrooms
+                  = "beds / "
+                  = home.number_of_bathrooms
+                  = " bths / "
+                  = home.square_foot
+                  = " sqf "
+                  - if home.swimming_pool? == true
+                    = " / Swimming pool: Yes"
+                  - else
+                    = ""
+                -# %p
+                -#   - if home.parking_garage? == true
+                -#     = "Garage: "
+                -#     = home.parking_garage_type
+                -#     = " / "
+                -#     = home.parking_garage_size
+                -#     = "sqf"
+                -# %td
+                -#   = link_to home do
+                -#     %span.glyphicon.glyphicon-ok
+                -# %td
+                -#   = link_to edit_home_path(home) do
+                -#     %span.glyphicon.glyphicon-pencil
+                -# %td
+                -#   = link_to home, data: { confirm: 'Are you sure?' }, method: :delete do
+                -#     %span.glyphicon.glyphicon-remove

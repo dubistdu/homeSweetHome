@@ -10,54 +10,60 @@
         - @home.errors.full_messages.each do |msg|
           %li= msg
 
-  .form-group
-    = f.label :address, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :address, class: 'form-control'
-  .form-group
-    = f.label :description, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_area :description, class: 'form-control'
-  .form-group
-    = f.label :number_of_bedrooms, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :number_of_bedrooms, class: 'form-control'
-  .form-group
-    = f.label :number_of_bathrooms, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :number_of_bathrooms, class: 'form-control'
-  .form-group
-    = f.label :square_foot, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :square_foot, class: 'form-control'
-  .form-group
-    = f.label :price, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :price, class: 'form-control'
-  .form-group
-    = f.label :swimming_pool, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.check_box :swimming_pool, class: 'form-control'
-  .form-group
-    = f.label :parking_garage, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.check_box :parking_garage, class: 'form-control'
-  .form-group
-    = f.label :parking_garage_type, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :parking_garage_type, class: 'form-control'
-  .form-group
-    = f.label :parking_garage_size, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :parking_garage_size, class: 'form-control'
-  .form-group
-    = f.label :images, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.attachment_field :images, class: 'form-control'
-  .form-group
-    = f.label :agent_id, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :agent_id, class: 'form-control'
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit class: 'btn btn-primary'
+  .page-header.newhome_button
+    = link_to new_home_path, class: 'btn btn-primary pull-right jaz-btn' do
+      %span.glyphicon.glyphicon-plus
+      New Home
+
+  .container.form_container
+    .col-md-12.fill_form
+      .header
+        %h2 List your home for sale
+      .form-group
+        = f.label :address, class: 'col-sm-2 control-label'
+        .col-sm-8
+          = f.text_field :address, class: 'form-control'
+      .form-group
+        = f.label :description, class: 'col-sm-2 control-label'
+        .col-sm-8
+          = f.text_area :description, class: 'form-control'
+      .form-group
+        = f.label :number_of_bedrooms, class: 'col-sm-2 control-label'
+        .col-sm-3
+          = f.number_field :number_of_bedrooms, class: 'form-control'
+        = f.label :number_of_bathrooms, class: 'col-sm-2 control-label'
+        .col-sm-3
+          = f.number_field :number_of_bathrooms, class: 'form-control'
+      .form-group
+        = f.label :square_foot, class: 'col-sm-2 control-label'
+        .col-sm-3
+          = f.number_field :square_foot, class: 'form-control'
+        = f.label :price, class: 'col-sm-2 control-label'
+        .col-sm-3
+          = f.number_field :price, class: 'form-control'
+      .form-group
+        = f.label :swimming_pool, class: 'col-sm-2 control-label'
+        .col-sm-3
+          = f.check_box :swimming_pool, class: 'form-control'
+        = f.label :parking_garage, class: 'col-sm-2 control-label'
+        .col-sm-3
+          = f.check_box :parking_garage, class: 'form-control'
+      .form-group
+        = f.label :parking_garage_type, class: 'col-sm-2 control-label'
+        .col-sm-3
+          %select#select.form-control
+            %option{value:"/"}
+            %option{value:"Attched"} Attched
+            %option{value:"Detached"} Detached
+            %option{value:"Street"} Street
+            %option{value:"Carport"} Carport
+        = f.label :parking_garage_size, class: 'col-sm-2 control-label'
+        .col-sm-3
+          = f.text_field :parking_garage_size, class: 'form-control'
+      .form-group
+        = f.label :images, class: 'col-sm-2 control-label'
+        .col-sm-8
+          = f.attachment_field :images, class: 'form-control'
+      .form-group
+        .col-sm-12
+          = f.submit class: 'btn btn-primary jaz-btn'

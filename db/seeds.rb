@@ -17,8 +17,7 @@ homes = Home.create!([
     parking_garage: true,
     parking_garage_type: 'attached',
     parking_garage_size: '200',
-    images: File.open(Rails.root.join("db/seed/images/headerimg.png")),
-    agent_id: 3
+    images: File.open(Rails.root.join("db/seed/images/home1.png"))
   },
   {
     address: '2222 Pepper Street, New York, NY, 12345',
@@ -31,8 +30,7 @@ homes = Home.create!([
     parking_garage: false,
     parking_garage_type: "",
     parking_garage_size: "",
-    images: File.open(Rails.root.join("db/seed/images/home1.png")),
-    agent_id: 3
+    images: File.open(Rails.root.join("db/seed/images/home2.png"))
   } ,
   {
     address: '500 Sesame Street, New York, NY, 12345',
@@ -43,9 +41,21 @@ homes = Home.create!([
     price: 300_000,
     swimming_pool: true,
     parking_garage: true,
-    parking_garage_type: 'attached',
+    parking_garage_type: 'Carport',
     parking_garage_size: '159',
-    images: File.open(Rails.root.join("db/seed/images/headerimg.png")),
-    agent_id: 3
+    images: File.open(Rails.root.join("db/seed/images/home3.png"))
+  } ,
+  {
+    address: '123 1st Street, Savannah, GA, 12345',
+    description: 'Close to downtown and restaurants. Central location',
+    number_of_bedrooms: 4,
+    number_of_bathrooms: 3,
+    square_foot: 2400,
+    price: 420_000,
+    swimming_pool: false,
+    parking_garage: true,
+    parking_garage_type: 'Attached',
+    parking_garage_size: '2 car garage',
+    images: File.open(Rails.root.join("db/seed/images/home4.jpg"))
   }
 ])
