@@ -8,31 +8,46 @@
     -# = link_to edit_home_path(@home), class: 'btn btn-primary' do
     -#   %span.glyphicon.glyphicon-pencil
     -#   Edit
-  .container
-    .row
-      .col-md-4.col-sm-6
-        %dl.dl-horizontal
-          %dt Address:
-          %dd= @home.address
-          %dt Number of bedrooms:
-          %dd= @home.number_of_bedrooms
-          %dt Number of bathrooms:
-          %dd= @home.number_of_bathrooms
-          %dt Square foot:
-          %dd= @home.square_foot
-          %dt Price:
-          %dd= @home.price
-          %dt Swimming pool:
-          %dd= @home.swimming_pool
-          %dt Parking garage:
-          %dd= @home.parking_garage
-          %dt Parking garage type:
-          %dd= @home.parking_garage_type
-          %dt Parking garage size:
-          %dd= @home.parking_garage_size
-          %dt Description:
-          %dd= @home.description
-      .col-xs-12.col-sm-12.col-md-6.col-lg-6
-        .img-thumbnail{:style => "border:none; background:white;"}
-          .image-container.img
-            = image_tag attachment_url(@home, :images), size: "620x445", class: "home_image"
+  .container.home_detail
+    .row.jaz-row
+      .col-lg-4.col-md-4.col-sm-6.home_description
+        .list-group-item.jaz-list-group-item
+          Address: &nbsp
+          = @home.address
+        .list-group-item.jaz-list-group-item
+          Number of bedrooms: &nbsp
+          = @home.number_of_bedrooms
+        .list-group-item.jaz-list-group-item
+          Number of bathrooms: &nbsp
+          = @home.number_of_bathrooms
+        .list-group-item.jaz-list-group-item
+          Square foot: &nbsp
+          = @home.square_foot
+          sqf
+        .list-group-item.jaz-list-group-item
+          Price: &nbsp $
+          = @home.price
+        .list-group-item.jaz-list-group-item
+          Swimming pool: &nbsp
+          - if @home.swimming_pool? == true
+            Yes
+          - else
+            No
+        .list-group-item.jaz-list-group-item
+          Parking garage: &nbsp
+          - if @home.parking_garage? == true
+            Yes
+          - else
+            No
+        .list-group-item.jaz-list-group-item
+          Parking garage type: &nbsp
+          = @home.parking_garage_type
+        .list-group-item.jaz-list-group-item
+          Parking garage size: &nbsp
+          = @home.parking_garage_size
+        .list-group-item.jaz-list-group-item
+          Description: &nbsp
+          = @home.description
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12.detail_img
+        .image-container.img
+          = image_tag attachment_url(@home, :images), size: "600x415", class: "home_image"
