@@ -59,3 +59,6 @@ gem "refile", github: "gstark/refile", branch: "updates-for-rails-5", require: "
 gem "refile-postgres"
 gem 'omniauth'
 gem 'omniauth-github'
+
+# pagination 
+gem 'kaminari'

@@ -1,10 +1,8 @@
 class HomesController < ApplicationController
   before_action :authenticate!, except: [:index]
-
-
   # GET /homes
   def index
-    @homes = Home.all.order("created_at DESC")
+    @homes = Home.all.order("created_at DESC").page(params[:page]).per(4)
   end
 
   # GET /homes/1
@@ -48,6 +46,11 @@ class HomesController < ApplicationController
     @home = Home.find(params[:id])
     @home.destroy
     redirect_to homes_url, notice: 'Home was successfully destroyed.'
+  end
+
+  #pagination using kaminari
+  def paginates_per
+    @home = Home.all.order("created_at DESC").page params[:page]
   end
 
   private
