@@ -1,24 +1,30 @@
-# README
+# About the App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Ruby v '2.3.3'
 
-Things you may want to cover:
+### real estate list app
 
-* Ruby version
+## Features
+- User can list a new house
+- User need to have pictures to complete listing homes
+- User login through 3rd party account such as github
 
-* System dependencies
+## Making of the app
+- Ruby on rails, Bootstrap (No theme/ custom designed using photoshop), Haml, scss
 
-* Configuration
+#### - Gems
+  kaminari
+  omniauth-github
+  refile
 
-* Database creation
+#### - Model
+  home
+  user
 
-* Database initialization
+#### - Controller
+  home
+  session
 
-* How to run the test suite
+## The app
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![screenshot](homesweethome.gif)  

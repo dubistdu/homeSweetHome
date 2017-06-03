@@ -53,6 +53,16 @@ class HomesController < ApplicationController
     @home = Home.all.order("created_at DESC").page params[:page]
   end
 
+ #search-form
+
+  def index
+    if params[:search]
+      @homes = Home.search(params[:search]).order("created_at DESC").page(params[:page]).per(4)
+    else
+      @homes = Home.all.order("created_at DESC").page(params[:page]).per(4)
+    end
+  end
+
   private
     # Only allow a trusted parameter "white list" through.
     def home_params
