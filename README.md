@@ -13,17 +13,17 @@
 - Ruby on rails, Bootstrap (No theme/ custom designed using photoshop), Haml, scss
 
 #### - Gems
-  kaminari
-  omniauth-github
-  refile
+  * kaminari
+  * omniauth-github
+  * refile
 
 #### - Model
-  home
-  user
+  * home
+  * user
 
 #### - Controller
-  home
-  session
+  * home
+  * session
 
 ## The app
 
